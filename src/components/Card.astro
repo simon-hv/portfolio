@@ -1,62 +1,73 @@
 ---
 export interface Props {
-	title: string;
-	body: string;
-	href: string;
+  title: string
+  image: string
 }
 
-const { href, title, body } = Astro.props;
+const { title, image } = Astro.props
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
+<li class="col-span-1 flex rounded-md shadow-sm hover:scale-105">
+  <div
+    class="flex-shrink-0 flex items-center justify-center w-16 h-12 bg-purple-600 text-white text-sm font-medium rounded-l-md"
+  >
+    <img
+      src={image}
+      alt={title}
+      loading="lazy"
+      decoding="async"
+      class="h-8 w-8"
+    />
+  </div>
+  <div
+    class="flex flex-1 items-center justify-between truncate rounded-r-md border-t border-r border-b border-gray-200 bg-white"
+  >
+    <div class="flex-1 truncate px-4 py-2 text-sm">
+      <span class="font-medium text-gray-900 hover:text-gray-600">
+        {title}
+      </span>
+    </div>
+  </div>
 </li>
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 0.15rem;
-		background-color: white;
-		background-image: var(--accent-gradient);
-		background-size: 400%;
-		border-radius: 0.5rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-	}
+  .link-card {
+    list-style: none;
+    display: flex;
+    padding: 0.15rem;
+    background-color: white;
+    background-image: var(--accent-gradient);
+    background-size: 400%;
+    border-radius: 0.5rem;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  }
 
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1rem 1.3rem;
-		border-radius: 0.35rem;
-		color: #111;
-		background-color: white;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-		color: #444;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent));
-	}
+  .link-card > a {
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: 1rem 1.3rem;
+    border-radius: 0.35rem;
+    color: #111;
+    background-color: white;
+    opacity: 0.8;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    color: #444;
+  }
+  .link-card:is(:hover, :focus-within) {
+    background-position: 0;
+  }
+  .link-card:is(:hover, :focus-within) h2 {
+    color: rgb(var(--accent));
+  }
 </style>

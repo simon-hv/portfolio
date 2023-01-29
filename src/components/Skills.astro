@@ -1,0 +1,73 @@
+---
+import Card from './Card.astro'
+
+const skills = [
+  {
+    title: 'Angular',
+    image: '/angular.png',
+  },
+  {
+    title: 'React',
+    image: '/react.png',
+  },
+  {
+    title: 'Next',
+    image: '/next.svg',
+  },
+  {
+    title: 'Typescript',
+    image: '/ts.png',
+  },
+  {
+    title: 'Javascript',
+    image: '/js.png',
+  },
+  {
+    title: 'Redux / NgRx',
+    image: '/redux.png',
+  },
+  {
+    title: 'RxJS',
+    image: '/rxjs.png',
+  },
+  {
+    title: 'Git',
+    image: '/git.png',
+  },
+  {
+    title: 'Nx',
+    image: '/nx.png',
+  },
+  {
+    title: 'AWS',
+    image: '/aws.png',
+  },
+  {
+    title: 'Gitlab CI/CD',
+    image: '/gitlab.png',
+  },
+  {
+    title: 'Node.js',
+    image: '/node.png',
+  },
+]
+---
+
+<div class="mx-5 lg:mx-20 my-16 pb-24 opacity-0 skills">
+  <h1
+    class="with-anim mt-2 block text-3xl font-bold text-indigo-400 leading-8 pl-14 tracking-tight sm:text-4xl"
+  >
+    Mes compétences
+  </h1>
+  <ul
+    role="list"
+    class="mx-auto mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4"
+  >
+    {skills.map(skill => <Card title={skill.title} image={skill.image} />)}
+  </ul>
+</div>
+
+<script>
+  import { observe } from '../observe'
+  observe('.skills')
+</script>
