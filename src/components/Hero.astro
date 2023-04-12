@@ -1,6 +1,7 @@
 ---
 import { Code } from 'astro/components'
 import Header from './Header.astro'
+import Outline from './shared/Outline.astro'
 
 const code = `
 export const Welcome = () => {
@@ -26,16 +27,16 @@ export const Welcome = () => {
         <div class="mx-auto max-w-2xl">
           <div class="max-w-lg">
             <h1
-              class="mt-10 text-4xl font-bold tracking-tight text-gray-200 text-center lg:text-left sm:text-6xl animate-[pulse_1s_ease-in-out_2]"
+              class="mt-10 text-4xl font-bold tracking-tight text-gray-200 text-center lg:text-left sm:text-6xl animate-[bounce_1s_ease-in_1.5]"
             >
               Simon Haïoun-Viet
             </h1>
-            <p
-              class="mt-6 text-lg lg:text-left leading-8 text-gray-400 text-justify"
-            >
-              Je suis passioné de développement web. Au fur et à mesure de mes
-              missions, je me suis spécialisé dans le front-end. J'ai beaucoup
-              travaillé avec <strong class="text-gray-300">Angular</strong> et
+            <p class="mt-6 text-lg lg:text-left leading-8 text-justify">
+              Je suis passioné de <Outline text="développement web" classNames='text-white' />. Au fur
+              et à mesure de mes missions, je me suis spécialisé dans le
+              front-end. J'ai beaucoup travaillé avec <strong
+                class="text-gray-300">Angular</strong
+              > et
               <strong class="text-gray-300">React</strong>, autant dans le
               domaine professionnel que personnel.
             </p>
@@ -66,7 +67,7 @@ export const Welcome = () => {
         </div>
       </div>
       <div
-        class="mt-20 xl:w-screen sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0"
+        class="mt-20 xl:w-screen sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 animate-slideLeft"
       >
         <div class="shadow-lg md:rounded-3xl">
           <div

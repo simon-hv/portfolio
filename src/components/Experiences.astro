@@ -1,5 +1,6 @@
 ---
 import ExperienceItem from './ExperienceItem.astro'
+import Outline from './shared/Outline.astro'
 
 const hawkStack = [
   'Angular',
@@ -20,11 +21,19 @@ const cgiStack = [
 ]
 ---
 
-<div class="flow-root my-16 pb-24 mx-5 lg:mx-20 opacity-0 experiences">
+<div
+  id="experiences"
+  class="mx-auto max-w-screen-xl flow-root my-16 pb-24 opacity-0"
+>
   <h1
-    class="with-anim mt-2 block text-3xl font-bold text-indigo-400 leading-8 pl-14 tracking-tight sm:text-4xl"
+    id="experiences-title"
+    class="mt-2 flex items-center text-3xl uppercase text-white leading-8 tracking-tight sm:text-4xl"
   >
-    Mes expériences
+    Mes
+    <Outline
+      text="expériences"
+      classNames="bg-indigo-500 text-gray-950 p-2.5 ml-2"
+    />
   </h1>
   <ul role="list" class="-mb-8 mt-10">
     <ExperienceItem
@@ -102,5 +111,6 @@ const cgiStack = [
 
 <script>
   import { observe } from '../observe'
-  observe('.experiences')
+  observe('experiences')
+  observe('experiences-title', 'animate-slideRight')
 </script>

@@ -40,7 +40,7 @@ import Contact from '../components/Contact.astro'
   main {
     font-family: var(--font-main);
     background-color: #0b192e;
-    color: rgb(156 163 175);
+    color: rgb(171, 179, 192);
   }
   .email-link {
     -webkit-writing-mode: vertical-rl;
@@ -52,25 +52,7 @@ import Contact from '../components/Contact.astro'
   html {
     scroll-behavior: smooth;
   }
-  h1.with-anim {
-    position: relative;
-  }
-  h1.with-anim::before,
-  h1.with-anim.with-anim--right::after {
-    content: '';
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMzAgMzUiPgogICAgPHBhdGgKICAgICAgICAgICAgZmlsbD0ibm9uZSIKICAgICAgICAgICAgc3Ryb2tlPSJ3aGl0ZSIKICAgICAgICAgICAgZD0iTTE0LjkyMSwyLjI3IDI4LjY2NywyNS41IDEuMTc1LDI1LjUgeiIKICAgIC8+Cjwvc3ZnPg==)
-      0% 0% / 40px;
-    animation: 4s linear 0s infinite normal none running rotate;
-  }
-  h1.with-anim.with-anim--right::after {
-    right: 0px;
-    left: unset;
-  }
+
   @keyframes rotate {
     0% {
       transform: rotate(0deg);

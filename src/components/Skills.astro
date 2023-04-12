@@ -1,5 +1,6 @@
 ---
-import Card from './Card.astro'
+import Card from './shared/Card.astro'
+import Outline from './shared/Outline.astro'
 
 const skills = [
   {
@@ -53,11 +54,16 @@ const skills = [
 ]
 ---
 
-<div class="mx-5 lg:mx-20 my-16 pb-24 opacity-0 skills">
+<div id="skills" class="mx-auto max-w-screen-xl my-16 pb-24 opacity-0">
   <h1
-    class="with-anim mt-2 block text-3xl font-bold text-indigo-400 leading-8 pl-14 tracking-tight sm:text-4xl"
+    id="skills-title"
+    class="mt-2 flex items-center text-3xl uppercase text-white leading-8 tracking-tight sm:text-4xl"
   >
-    Mes compétences
+    Mes
+    <Outline
+      text="compétences"
+      classNames="bg-indigo-500 text-gray-950 p-2.5 ml-2"
+    />
   </h1>
   <ul
     role="list"
@@ -69,5 +75,6 @@ const skills = [
 
 <script>
   import { observe } from '../observe'
-  observe('.skills')
+  observe('skills')
+  observe('skills-title', 'animate-slideRight')
 </script>
