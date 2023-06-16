@@ -7,10 +7,19 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.gray.400'),
-						'--tw-prose-bold': theme('colors.gray.300'),
+            '--tw-prose-bold': theme('colors.gray.300'),
           },
         },
       }),
+      animation: {
+        fadeIn: 'fadeIn 1s ease-in forwards',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      },
     },
   },
   plugins: [
