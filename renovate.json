@@ -3,5 +3,16 @@
   "extends": [
     "config:base"
   ],
+  "schedule": "every weekend",
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
+      "groupName": "patch and minor updates"
+    }
+  ],
   "prHourlyLimit": 3
 }
