@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+import Hero from '../components/Hero.astro'
+---
+
+<Layout title="Simon Haïoun-Viet">
+  <main>
+    <Hero />
+  </main>
+</Layout>
+
+<style>
+  :root {
+    --font-main: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text',
+      -apple-system, system-ui, sans-serif;
+  }
+
+  main {
+    font-family: var(--font-main);
+		background-color: #0B192E;
+		color: #8892AF;
+  }
+
+</style>
