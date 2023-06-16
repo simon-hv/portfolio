@@ -1,23 +1,35 @@
+---
+import Outline from './shared/Outline.astro'
+---
+
 <div
-  class="relative overflow-hidden my-16 pb-24 opacity-0 aboutme"
   id="aboutme"
+  class="mx-auto max-w-screen-xl relative overflow-hidden my-16 pb-24 opacity-0"
 >
   <div class="relative px-6 lg:px-8">
     <div class="mx-auto max-w-prose text-lg">
       <h1
-        class="with-anim with-anim--right mt-2 block text-center text-3xl font-bold text-indigo-400 leading-8 tracking-tight sm:text-4xl"
+        id="aboutme-title"
+        class="mt-2 flex items-center text-3xl uppercase text-white leading-8 tracking-tight sm:text-4xl"
       >
-        À propos de moi
+        <Outline
+          text="À propos"
+          classNames="bg-indigo-500 text-gray-950 p-2.5 mr-2"
+        />
+        de moi
       </h1>
     </div>
-    <div class="prose prose-lg prose-indigo mx-auto mt-6">
+    <div class="prose prose-lg mx-auto mt-6">
       <p>
         Bonjour ! Je m’appelle Simon, je suis développeur web
         professionnellement depuis 2015 et passionnément depuis 2006. A travers
         ces années, j’ai pu expérimenter de nombreuses technos et voir le
-        domaine évoluer très vite. Aujourd’hui je travaille principalement sur
-        <strong>Angular</strong> et <strong>React</strong>. Sur mon temps libre
-        j’utilise d'autres frameworks/outils comme
+        domaine évoluer très vite. Aujourd’hui je travaille principalement avec
+        <Outline text="Angular" classNames="text-white" /> et <Outline
+          text="React"
+          classNames="text-white"
+        />. <br />
+        Sur mon temps libre j’utilise d'autres frameworks/outils comme
         <strong>Astro</strong> ou <strong>Next</strong> pour générer des sites statiques
         par exemple.
       </p>
@@ -30,16 +42,19 @@
       <p>
         Mis à part le frontend, j’apprécie particulièrement la partie
         architecture et déploiement. En effet, j’utilise régulièrement
-        <strong>AWS</strong> afin de déployer des applications sur
+        <Outline text="AWS" classNames="text-white" /> afin de déployer des applications
+        sur
         <strong>EC2</strong>, des sites statiques sur <strong>S3</strong> ou encore
         mettre en place des applications <strong>serverless</strong>. <br />
-        J’utilise également <strong>Gitlab CI/CD</strong> pour builder, tester et
-        déployer mes applications ainsi que <strong>terraform</strong> pour créer/maintenir
+        J’utilise également
+        <Outline text="Gitlab CI/CD" classNames="text-white" /> pour builder, tester
+        et déployer mes applications ainsi que <strong>terraform</strong> pour créer/maintenir
         toute l’infrastructure.
       </p>
       <p>
         Enfin, j'affectionne aussi toute la partie backend. J'aime créer des
-        applications principalement avec <strong>Node.js</strong> et plus précisément
+        applications principalement avec
+        <Outline text="Node.js" classNames="text-white" /> et plus précisément
         <strong>Express.js</strong>.
       </p>
     </div>
@@ -48,6 +63,6 @@
 
 <script>
   import { observe } from '../observe'
-
-  observe('.aboutme')
+  observe('aboutme')
+  observe('aboutme-title', 'animate-slideRight')
 </script>
