@@ -1,0 +1,53 @@
+<div
+  class="relative overflow-hidden my-16 pb-24 opacity-0 aboutme"
+  id="aboutme"
+>
+  <div class="relative px-6 lg:px-8">
+    <div class="mx-auto max-w-prose text-lg">
+      <h1
+        class="with-anim with-anim--right mt-2 block text-center text-3xl font-bold text-indigo-400 leading-8 tracking-tight sm:text-4xl"
+      >
+        À propos de moi
+      </h1>
+    </div>
+    <div class="prose prose-lg prose-indigo mx-auto mt-6">
+      <p>
+        Bonjour ! Je m’appelle Simon, je suis développeur web
+        professionnellement depuis 2015 et passionnément depuis 2006. A travers
+        ces années, j’ai pu expérimenter de nombreuses technos et voir le
+        domaine évoluer très vite. Aujourd’hui je travaille principalement sur
+        <strong>Angular</strong> et <strong>React</strong>. Sur mon temps libre
+        j’utilise d'autres frameworks/outils comme
+        <strong>Astro</strong> ou <strong>Next</strong> pour générer des sites statiques
+        par exemple.
+      </p>
+      <p>
+        Le domaine évoluant assez vite, j’aime faire de la veille et me tenir au
+        courant des dernières nouveautés. Je ne suis pas fermé à une techno en
+        particulier et j’aime découvrir puis tester de nouvelles technos afin de
+        me faire mon propre avis.
+      </p>
+      <p>
+        Mis à part le frontend, j’apprécie particulièrement la partie
+        architecture et déploiement. En effet, j’utilise régulièrement
+        <strong>AWS</strong> afin de déployer des applications sur
+        <strong>EC2</strong>, des sites statiques sur <strong>S3</strong> ou encore
+        mettre en place des applications <strong>serverless</strong>. <br />
+        J’utilise également <strong>Gitlab CI/CD</strong> pour builder, tester et
+        déployer mes applications ainsi que <strong>terraform</strong> pour créer/maintenir
+        toute l’infrastructure.
+      </p>
+      <p>
+        Enfin, j'affectionne aussi toute la partie backend. J'aime créer des
+        applications principalement avec <strong>Node.js</strong> et plus précisément
+        <strong>Express.js</strong>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { observe } from '../observe'
+
+  observe('.aboutme')
+</script>
