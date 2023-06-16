@@ -1,0 +1,106 @@
+---
+import ExperienceItem from './ExperienceItem.astro'
+
+const hawkStack = [
+  'Angular',
+  'React',
+  'Redux / NgRx',
+  'RxJS',
+  'Nx',
+  'Node.js',
+  'AWS',
+]
+
+const cgiStack = [
+  'Adobe AEM',
+  'AngularJS',
+  'Java 7',
+  'Symfony 2',
+  'Java Spring',
+]
+---
+
+<div class="flow-root my-16 pb-24 mx-5 lg:mx-20 opacity-0 experiences">
+  <h1
+    class="with-anim mt-2 block text-3xl font-bold text-indigo-400 leading-8 pl-14 tracking-tight sm:text-4xl"
+  >
+    Mes expériences
+  </h1>
+  <ul role="list" class="-mb-8 mt-10">
+    <ExperienceItem
+      company="Hawk"
+      companyLogo="/hawk.svg"
+      duration="Février 2017 - Aujourd'hui"
+      stack={hawkStack}
+    >
+      Développement d'une plateforme web programmatique (système d'enchères
+      automatique en temps réel dans le domaine de la publicité)
+    </ExperienceItem>
+
+    <ExperienceItem
+      company="CGI"
+      companyLogo="/cgi.png"
+      duration="2015 - 2017"
+      stack={cgiStack}
+    >
+      J'ai pu travailler sur le portail client de EDF, sur un site intranet pour
+      SNCF Réseau ainsi que le développement d'un site web pour les Notaires de
+      France
+    </ExperienceItem>
+
+    <ExperienceItem
+      company="Auto-Entrepreneur"
+      companyLogo="/ae.png"
+      duration="2018"
+      stack={['Angular5', 'Sails.js']}
+    >
+      Développement d'un site web pour une agence de communication spécialisée
+      dans les contenus bien-être
+    </ExperienceItem>
+
+    <ExperienceItem
+      company="Auto-Entrepreneur"
+      companyLogo="/ae.png"
+      duration="2016"
+      stack={['AngularJS', 'Sails.js']}
+    >
+      Développement d'un site intranet pour Fruition Sciences leur permettant de
+      gérer des arduinos via une interface web
+    </ExperienceItem>
+
+    <ExperienceItem
+      company="Auto-Entrepreneur"
+      companyLogo="/ae.png"
+      duration="2016"
+      stack={['Wordpress']}
+    >
+      Développement d'un site web pour une association spécialisée dans la
+      formation continue des salariés du secteur hospitalier, des structures
+      médico-sociales et des collectivités territoriales
+    </ExperienceItem>
+
+    <ExperienceItem
+      company="Auto-Entrepreneur"
+      companyLogo="/ae.png"
+      isLast={true}
+      duration="2012-2014"
+      stack={['PHP 5', 'JQuery']}
+    >
+      Développement d'un moteur de recherche multicritère pour Bioversity
+      International. Ce site permet à des scientifiques d'accéder à des
+      références (livres, articles de journaux...) sur le thème de la banane :
+      <a href="https://www.musalit.org/" target="_blank">Musalit</a>
+    </ExperienceItem>
+  </ul>
+</div>
+
+<style>
+  a {
+    color: #3b82f6;
+  }
+</style>
+
+<script>
+  import { observe } from '../observe'
+  observe('.experiences')
+</script>
