@@ -2,12 +2,29 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Testimonial from '../components/Testimonial.astro'
+import About from '../components/About.astro'
+import Skills from '../components/Skills.astro'
 ---
 
 <Layout title="Simon Haïoun-Viet">
   <main>
-    <Hero />
-		<Testimonial />
+    <div
+      class="w-10 z-50 fixed text-sm bottom-0 left-2.5 right-auto hidden lg:block after:content-[''] after:block after:w-px after:h-20 after:bg-slate-400 after:mx-auto after:my-O"
+    >
+      <a
+        class="p-2.5 tracking-widest email-link hover:text-white hover:cursor-pointer hover:scale-105"
+        href="mailto:simon.haiounviet@gmail.com"
+      >
+        simon.haiounviet@gmail.com
+      </a>
+    </div>
+
+    <div class="container">
+      <Hero />
+      <About />
+      <Skills />
+      <Testimonial />
+    </div>
   </main>
 </Layout>
 
@@ -20,6 +37,48 @@ import Testimonial from '../components/Testimonial.astro'
   main {
     font-family: var(--font-main);
     background-color: #0b192e;
-    color: #8892af;
+
+    color: rgb(156 163 175);
+  }
+  .email-link {
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+  }
+
+  .container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+</style>
+
+<style is:global>
+  h1.with-anim {
+    position: relative;
+  }
+  h1.with-anim::before,
+  h1.with-anim.with-anim--right::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwMCIgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMzAgMzUiPgogICAgPHBhdGgKICAgICAgICAgICAgZmlsbD0ibm9uZSIKICAgICAgICAgICAgc3Ryb2tlPSJ3aGl0ZSIKICAgICAgICAgICAgZD0iTTE0LjkyMSwyLjI3IDI4LjY2NywyNS41IDEuMTc1LDI1LjUgeiIKICAgIC8+Cjwvc3ZnPg==)
+      0% 0% / 40px;
+    animation: 4s linear 0s infinite normal none running rotate;
+  }
+
+  h1.with-anim.with-anim--right::after {
+    right: 0px;
+    left: unset;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 </style>
