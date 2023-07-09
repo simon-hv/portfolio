@@ -4,16 +4,16 @@ import Outline from './shared/Outline.astro'
 
 const skills = [
   {
-    title: 'Angular',
-    image: '/angular.png',
-  },
-  {
     title: 'React',
     image: '/react.png',
   },
   {
     title: 'Next',
     image: '/next.svg',
+  },
+  {
+    title: 'Angular',
+    image: '/angular.png',
   },
   {
     title: 'Typescript',
@@ -69,7 +69,7 @@ const skills = [
     role="list"
     class="mx-auto mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3"
   >
-    {skills.map(skill => <Card title={skill.title} image={skill.image} />)}
+    {skills.map((skill) => <Card title={skill.title} image={skill.image} />)}
   </ul>
 </div>
 
